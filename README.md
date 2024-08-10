@@ -1,0 +1,1 @@
+# adobrova-qa_guru_7_class_faker_2024
