@@ -5,6 +5,8 @@ import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.Locale;
+
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -21,7 +23,7 @@ public class TextBoxWithFakerTests extends TestBase{
     @Test
     void fillFormTest() {
 
-        Faker faker = new Faker();
+        Faker faker = new Faker(new Locale("en-GB"));
 
      //   String name = faker.name().fullName();
         String firstName = faker.name().firstName();
