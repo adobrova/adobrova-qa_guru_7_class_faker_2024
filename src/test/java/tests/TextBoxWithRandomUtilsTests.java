@@ -1,24 +1,28 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
+
+import java.util.Locale;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static tests.TestData.*;
+import static utils.RandomUtils.*;
 
-public class TextBoxWithTestDataTests extends TestBase {
-
-        String firstName="Albina",
-                lastName="Dobrova",
-                userEmail="rezolventa86@rambler.ru";
-
+public class TextBoxWithRandomUtilsTests extends TestBase{
 
     @Test
     void fillFormTest() {
+
+     //   String name = faker.name().fullName();
+       String firstName = getRandomString(10);
+       String lastName = getRandomString(10);
+       String userEmail = getRandomEmail();
+        String streetAddress = getRandomAddress();
+
+
         open("/automation-practice-form");
 
         //после открытия страницы скрываем рекламу и футер
@@ -46,7 +50,7 @@ public class TextBoxWithTestDataTests extends TestBase {
 
 
         $("#uploadPicture").uploadFromClasspath("cat.jpg");
-        $("#currentAddress").setValue("Ufa, Russia");
+        $("#currentAddress").setValue(streetAddress);
 
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
@@ -72,7 +76,7 @@ public class TextBoxWithTestDataTests extends TestBase {
         $(".modal-content").shouldHave(text("Computer Science"));
         $(".modal-content").shouldHave(text("Sports, Reading"));
         $(".modal-content").shouldHave(text("cat.jpg"));
-        $(".modal-content").shouldHave(text("Ufa, Russia"));
+        $(".modal-content").shouldHave(text(streetAddress));
         $(".modal-content").shouldHave(text("NCR Delhi"));
 
 

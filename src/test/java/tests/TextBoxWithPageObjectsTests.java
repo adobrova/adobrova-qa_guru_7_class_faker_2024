@@ -16,12 +16,13 @@ RegistrationPage registrationPage = new RegistrationPage();
                 .setUserEmail("rezolventa86@rambler.ru")
                 .setGender("Female")
                 .setUserNumber("9872552206")
-                .setDateOfBirth("2", "January", "1986")
+                //.setDateOfBirth("2", "January", "1986")
                 .setSubjects("Comp")
-                .setHobbies("Sports", "Reading")
+                .setHobbies("Sports")
                 .setPicture("cat.jpg")
                 .setCurrentAddress("Ufa, Russia")
                 .setStateAndCity("NCR", "Delhi")
+
 
                 .submit()
 

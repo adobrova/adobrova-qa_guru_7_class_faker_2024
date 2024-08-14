@@ -15,17 +15,11 @@ import static tests.TestData.*;
 
 public class TextBoxWithFakerTests extends TestBase{
 
-//        String firstName="Albina",
-//                lastName="Dobrova",
-//                userEmail="rezolventa86@rambler.ru";
-
-
     @Test
     void fillFormTest() {
 
         Faker faker = new Faker(new Locale("en-GB"));
 
-     //   String name = faker.name().fullName();
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         String userEmail = faker.internet().emailAddress();

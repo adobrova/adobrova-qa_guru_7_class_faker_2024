@@ -80,11 +80,11 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setDateOfBirth(String day, String month, String year) {
-        calendarInput.click();
-        calendarComponent.setDate(day, month, year);
-        return this;
-    }
+//    public RegistrationPage setDateOfBirth(String day, String month, String year) {
+//        calendarInput.click();
+//        calendarComponent.setDate(day, month, year);
+//        return this;
+//    }
 
     public RegistrationPage setSubjects(String value) {
 
@@ -92,11 +92,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setHobbies(String hobby1, String hobby2) {
+    public RegistrationPage setHobbies(String hobby) {
 
-        hobbiesWrapper.$(byText(hobby1)).click();
-        hobbiesWrapper.$(byText(hobby2)).click();
-
+        hobbiesWrapper.$(byText(hobby)).click();
         return this;
     }
 
